@@ -10,6 +10,11 @@
 			<img class="left" src="$Photo.SetWidth(200).Url">
 		<% end_if %>
 		<div class="content">$Content</div>
+
+		<% if $Report %>
+			<a href="$Report.Url">$Report.Title ($Report.Extension, $Report.Size)</a>
+		<% end_if %>
+
 	</article>
 		$Form
 		$PageComments
