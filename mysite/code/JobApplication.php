@@ -1,23 +1,25 @@
 <?php
-class Job extends DataObject {
+class JobApplication extends DataObject {
 
 	private static $db = array(
-		'Reference' => 'Varchar(5)',
-		'Position' => 'Varchar(255)',
-		'ClosingDate' => 'Date',
-		'Content' => 'Text',
-		'Status' => 'Enum("Draft, Published, Closed","Draft")',
+		'Name' => 'Varchar(255)',
+		'Email' => 'Varchar(255)',
+		'Phone' => 'Varchar(255)',
+		'Application' => 'Text',
+		'Status' => 'Enum("Applied, Short list, Unsuccessful, Hired","Applied")',
+	);
+
+	private static $has_one = array(
+		'Job' => 'Job',
 	);
 
 	private static $summary_fields = array(
-		'Reference' => 'Reference #',
-		'Position' => 'Job Position',
+		'Job.Reference' => 'Job Reference #',
+		'Name' => 'Full name',
+		'Email' => 'Email',
+		'Phone' => 'Phone',
 		'Status' => 'Status',
 	);
-
-	public function getTitle(){
-		return $this->Position . " (#" . $this->Reference . ")";
-	}
 
 	public function canView($member = null) {
 		return Permission::check('CMS_ACCESS_JobAdmin');
@@ -34,4 +36,5 @@ class Job extends DataObject {
 	public function canCreate($member = null) {
 		return Permission::check('CMS_ACCESS_JobAdmin');
 	}
+
 }
