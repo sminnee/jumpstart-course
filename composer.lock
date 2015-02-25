@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "351c3c25e8ad3f3e9bec6672374d4746",
+    "hash": "d20062ed9c985d20e37a9d2bb04db69f",
     "packages": [
         {
             "name": "composer/installers",
@@ -234,7 +234,45 @@
             "time": "2015-02-18 23:37:16"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "silverstripe/sqlite3",
+            "version": "1.3.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe-labs/silverstripe-sqlite3.git",
+                "reference": "6bb7d5a5f6ddc137c34d501ebb65442f634cf624"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe-labs/silverstripe-sqlite3/zipball/6bb7d5a5f6ddc137c34d501ebb65442f634cf624",
+                "reference": "6bb7d5a5f6ddc137c34d501ebb65442f634cf624",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": ">=3.0,<3.2"
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Sean Harvey",
+                    "email": "sean@silverstripe.com"
+                },
+                {
+                    "name": "Ingo Schommer",
+                    "email": "ingo@silverstripe.com"
+                }
+            ],
+            "description": "Adds SQLite3 support to SilverStripe",
+            "keywords": [
+                "database",
+                "silverstripe",
+                "sqlite3"
+            ],
+            "time": "2014-10-27 20:53:23"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": [],
