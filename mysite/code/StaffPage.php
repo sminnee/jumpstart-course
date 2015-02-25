@@ -10,18 +10,28 @@ class StaffPage extends Page {
 		'Email' => 'Varchar(255)',
 	);
 
+	private static $has_one = array(
+		'Photo' => 'Image',
+	);
+
 	public function getCMSFields(){
 
 		$fields = parent::getCMSFields();
 
 		$fields->addFieldToTab(
-			'Root.Main', 
+			'Root.Main',
+			UploadField::create('Photo'),
+			'Content'
+		);
+
+		$fields->addFieldToTab(
+			'Root.Main',
 			PhoneNumberField::create('Phone'),
 			'Content'
 		);
 
 		$fields->addFieldToTab(
-			'Root.Main', 
+			'Root.Main',
 			EmailField::create('Email'),
 			'Content'
 		);
