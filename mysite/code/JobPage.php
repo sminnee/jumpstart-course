@@ -58,4 +58,18 @@ class JobPage_Controller extends Page_Controller {
 
 	}
 
+	public function processApplication($data, Form $form) {
+
+		$application = JobApplication::create();
+
+		$form->saveInto($application);
+
+		$application->write();
+
+		$form->sessionMessage( 'Thanks for applying.', 'good' );
+
+		$this->redirectBack();
+
+	}
+
 }
